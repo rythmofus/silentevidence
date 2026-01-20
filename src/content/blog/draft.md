@@ -1,16 +1,14 @@
 ---
-title: 'Draft Page'
-publishDate: '2025-07-03'
-updatedDate: '2025-07-10'
-description: 'Draft page for any purpose'
+pubDatetime: 2026-01-20
+modDatetime: 2026-01-20
+title: Draft Page
+featured: false
+draft: false
 tags:
   - Draft
-language: 'English'
-# Remove or set false to turn draft page into normal ones
-draft: true
+description: Draft page for any purpose
 ---
-
-```log title="hello.log"
+```log
 test
 test
 ```
@@ -20,7 +18,7 @@ test
 Test `inline code`
 
 | Header 1 | Header 2 | Header 3 |
-| -------- | -------- | -------- |
-| Row 1    | Data 1   | Data 2   |
-| Row 2    | Data 1   | Data 2   |
-| Row 3    | Data 1   | Data 2   |
+| --- | --- | --- |
+| Row 1 | Data 1 | Data 2 |
+| Row 2 | Data 1 | Data 2 |
+| Row 3 | Data 1 | Data 2 |
