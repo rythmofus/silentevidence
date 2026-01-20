@@ -1,0 +1,42 @@
+version: 1
+
+collections:
+  - name: posts
+    label: Blog Posts
+    path: src/content/posts
+    type: markdown
+    slug: "{{slug}}"
+
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: description
+        label: Description
+        type: string
+
+      - name: pubDate
+        label: Publish Date
+        type: date
+        required: true
+
+      - name: tags
+        label: Tags
+        type: list
+        item:
+          type: string
+
+      - name: image
+        label: Cover Image (Cloudinary URL)
+        type: string
+
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+      - name: body
+        label: Content
+        type: rich-text
