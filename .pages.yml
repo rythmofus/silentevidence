@@ -6,7 +6,8 @@ collections:
     path: src/content/blog
     format: frontmatter
     extension: md
-    slug: "{{slug}}"
+   slug: {{slug}}
+
 
     fields:
       - name: title
