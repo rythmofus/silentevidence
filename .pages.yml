@@ -5,7 +5,10 @@ collections:
     label: Blog Posts
     path: src/content/blog
     type: markdown
-    slug: {{slug}}
+    include:
+      - "**/*.md"
+      - "**/*.mdx"
+    slug: "{{path}}"
 
     fields:
       - name: title
