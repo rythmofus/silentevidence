@@ -4,7 +4,8 @@ collections:
   - name: posts
     label: Blog Posts
     path: src/content/posts
-    type: markdown
+    format: frontmatter
+    extension: md
     slug: "{{slug}}"
 
     fields:
@@ -39,4 +40,4 @@ collections:
 
       - name: body
         label: Content
-        type: rich-text
+        type: markdown
