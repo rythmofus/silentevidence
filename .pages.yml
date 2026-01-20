@@ -1,5 +1,3 @@
-# .pages.yml
-
 media:
   input: public
   output: /
@@ -10,10 +8,12 @@ content:
     type: collection
     path: src/content/blog
     include:
-      - "**/index.md"
-      - "**/index.mdx"
+      - "**/*.md"
+      - "**/*.mdx"
+
     view:
       fields: [title, draft, publishDate]
+
     fields:
       - name: title
         label: Title
@@ -29,7 +29,7 @@ content:
         type: date
         required: true
         options:
-          format: "YYYY-MM-DD"
+          format: "yyyy-MM-dd"
 
       - name: tags
         label: Tags
@@ -45,7 +45,6 @@ content:
         type: boolean
         default: false
 
-      # Important: keep markdown, not rich-text, so it writes normal frontmatter + markdown
       - name: body
         label: Body
         type: markdown
@@ -55,12 +54,9 @@ content:
     type: collection
     path: src/content/docs
     include:
-      - "**/index.md"
-      - "**/index.mdx"
       - "**/*.md"
       - "**/*.mdx"
-    view:
-      fields: [title]
+
     fields:
       - name: title
         label: Title
