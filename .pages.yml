@@ -10,11 +10,10 @@ content:
     type: collection
     path: src/content/blog
     include:
-      - "**/*.md"
-      - "**/*.mdx"
+      - "**/index.md"
+      - "**/index.mdx"
     view:
       fields: [title, draft, publishDate]
-
     fields:
       - name: title
         label: Title
@@ -25,7 +24,6 @@ content:
         label: Description
         type: string
 
-      # MUST be ISO so Astro schema accepts it
       - name: publishDate
         label: Publish Date
         type: date
@@ -47,7 +45,7 @@ content:
         type: boolean
         default: false
 
-      # For markdown posts, keep this as markdown (not rich-text)
+      # Important: keep markdown, not rich-text, so it writes normal frontmatter + markdown
       - name: body
         label: Body
         type: markdown
@@ -57,11 +55,12 @@ content:
     type: collection
     path: src/content/docs
     include:
+      - "**/index.md"
+      - "**/index.mdx"
       - "**/*.md"
       - "**/*.mdx"
     view:
       fields: [title]
-
     fields:
       - name: title
         label: Title
