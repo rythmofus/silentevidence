@@ -4,10 +4,8 @@ collections:
   - name: blog
     label: Blog Posts
     path: src/content/blog
-    format: frontmatter
-    extension: md
+    type: markdown
     slug: {{slug}}
-
 
     fields:
       - name: title
