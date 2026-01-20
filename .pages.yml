@@ -1,3 +1,5 @@
+# .pages.yml
+
 media:
   input: public
   output: /
@@ -14,13 +16,41 @@ content:
       fields: [title, draft, publishDate]
 
     fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string }
-      - { name: publishDate, label: Publish Date, type: date, required: true }
-      - { name: tags, label: Tags, type: string, list: true }
-      - { name: image, label: Cover Image (URL), type: string }
-      - { name: draft, label: Draft, type: boolean, default: false }
-      - { name: body, label: Body, type: rich-text }
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: description
+        label: Description
+        type: string
+
+      # MUST be ISO so Astro schema accepts it
+      - name: publishDate
+        label: Publish Date
+        type: date
+        required: true
+        options:
+          format: "YYYY-MM-DD"
+
+      - name: tags
+        label: Tags
+        type: string
+        list: true
+
+      - name: image
+        label: Cover Image (URL)
+        type: string
+
+      - name: draft
+        label: Draft
+        type: boolean
+        default: false
+
+      # For markdown posts, keep this as markdown (not rich-text)
+      - name: body
+        label: Body
+        type: markdown
 
   - name: docs
     label: Docs
@@ -33,6 +63,15 @@ content:
       fields: [title]
 
     fields:
-      - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string }
-      - { name: body, label: Body, type: rich-text }
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: description
+        label: Description
+        type: string
+
+      - name: body
+        label: Body
+        type: markdown
