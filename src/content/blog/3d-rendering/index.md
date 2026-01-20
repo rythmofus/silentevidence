@@ -2,6 +2,7 @@
 pubDatetime: 2026-01-20
 modDatetime: 2026-01-31
 title: What Is 3D Rendering? Complete Guide to 3D Visualization
+ogImage: https://i.ytimg.com/vi/-EYrzjJ7Olo/maxresdefault.jpg
 featured: false
 draft: false
 tags:
