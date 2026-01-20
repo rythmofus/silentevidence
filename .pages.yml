@@ -1,45 +1,39 @@
-version: 1
+media:
+  input: public
+  output: /
 
-collections:
-  - name: blog
-    label: Blog Posts
+content:
+  - name: posts
+    label: Posts
+    type: collection
     path: src/content/blog
-    type: markdown
+
+    # Important: pick up nested folders + both md/mdx
     include:
       - "**/*.md"
       - "**/*.mdx"
-    slug: "{{path}}"
+
+    view:
+      fields: [title, draft, pubDatetime]
 
     fields:
-      - name: title
-        label: Title
-        type: string
-        required: true
+      - { name: author, label: Author, type: string }
+      - { name: pubDatetime, label: Publish Date, type: date, required: true }
+      - { name: modDatetime, label: Modified Date, type: date }
+      - { name: title, label: Title, type: string, required: true }
+      - { name: ogImage, label: OG Image (URL), type: string }
+      - { name: slug, label: Slug, type: string }
+      - { name: featured, label: Featured, type: boolean, default: false }
+      - { name: draft, label: Draft, type: boolean, default: false }
+      - { name: tags, label: Tags, type: string, list: true }
+      - { name: description, label: Description, type: string }
+      - { name: body, label: Body, type: rich-text }
 
-      - name: description
-        label: Description
-        type: string
-
-      - name: pubDate
-        label: Publish Date
-        type: date
-        required: true
-
-      - name: tags
-        label: Tags
-        type: list
-        item:
-          type: string
-
-      - name: image
-        label: Cover Image (Cloudinary URL)
-        type: string
-
-      - name: draft
-        label: Draft
-        type: boolean
-        default: false
-
-      - name: body
-        label: Content
-        type: markdown
+  - name: about
+    label: About page
+    type: file
+    path: src/pages/about.md
+    fields:
+      - { name: layout, type: string, hidden: true, default: "../layouts/AboutLayout.astro" }
+      - { name: title, label: Title, type: string }
+      - { name: body, label: Body, type: rich-text, options: { input: public/assets, output: /assets } }
