@@ -11,13 +11,28 @@ content:
       - "**/*.md"
       - "**/*.mdx"
     view:
-      fields: [title, draft, pubDate]
+      fields: [title, draft, publishDate]
 
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string }
-      - { name: pubDate, label: Publish Date, type: date, required: true }
+      - { name: publishDate, label: Publish Date, type: date, required: true }
       - { name: tags, label: Tags, type: string, list: true }
       - { name: image, label: Cover Image (URL), type: string }
       - { name: draft, label: Draft, type: boolean, default: false }
+      - { name: body, label: Body, type: rich-text }
+
+  - name: docs
+    label: Docs
+    type: collection
+    path: src/content/docs
+    include:
+      - "**/*.md"
+      - "**/*.mdx"
+    view:
+      fields: [title]
+
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: string }
       - { name: body, label: Body, type: rich-text }
